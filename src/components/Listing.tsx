@@ -22,7 +22,7 @@ const Listing = ({ book, deleteListing }: ListingProps) => {
     <div className="bg-tussock-200 rounded p-5 relative">
       <button
         className="absolute right-4 cursor-pointer h-6 w-6 hover:text-white transition-colors"
-        onClick={() => handleDelete(id)}
+        onClick={() => handleDelete()}
       >
         <svg
           aria-hidden="true"
