@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Italiana&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-botoni: "Bodoni", sans-serif;
+  --color-tussock-50: #f9f7ed;
+  --color-tussock-100: #f1ead0;
+  --color-tussock-200: #e4d5a4;
+  --color-tussock-300: #d4b870;
+  --color-tussock-400: #c79e48;
+  --color-tussock-500: #c0913d;
+  --color-tussock-600: #9e6d30;
+  --color-tussock-700: #7f5229;
+  --color-tussock-800: #6a4329;
+  --color-tussock-900: #5c3a27;
+  --color-tussock-950: #351e13;
+}
+
+@layer components {
+  body {
+    @apply bg-tussock-950;
+  }
+
+  section {
+    @apply px-5;
+  }
+
+
+  @media (min-width: 1024px) {
+    section {
+      width: 80%;
+    }
+  }
+}
+
+@font-face {
+  font-family: Bodoni;
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("assets/fonts/BodoniModa-VariableFont_opsz,wght.woff2") format("woff2");
+}
