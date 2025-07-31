@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Listing from "./components/Listing";
-import NewListingForm from "./components/NewListingForm";
+import Listing from "../components/Listing";
+import NewListingForm from "../components/NewListingForm";
 
-import type { Books } from "./types/books";
+import type { Books } from "../types/books";
 
 const Home = () => {
   /*
@@ -53,12 +53,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="bg-white p-0 h-52 w-full">
-        <h1 className="font-botoni text-tussock-950 leading-none text-9xl font-bold relative -left-5 -top-5 -bottom-5">
-          Book <span className="block">Club</span>
-        </h1>
-      </section>
-      <section className="py-20 flex flex-col gap-10">
+      <section className="py-20 flex flex-col gap-10 w-full">
         <article className="flex flex-col gap-5">
           <p className="text-white uppercase font-botoni text-2xl">
             - Add a New Book
@@ -69,9 +64,12 @@ const Home = () => {
           <p className="text-white uppercase font-botoni text-2xl pb-5">
             - Books
           </p>
-          <ul className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <ul className="grid grid-cols-1 md:grid-cols-4 gap-2 w-full">
             {books.map((book) => (
-              <li key={book.id} className="">
+              <li
+                key={book.id}
+                className="w-full bg-linear-to-t/oklab from-tussock-200 from-70% to-tussock-300 rounded p-5 relative h-full flex gap-2 flex-col drop-shadow-lg"
+              >
                 <Listing book={book} deleteListing={deleteBook} />
               </li>
             ))}

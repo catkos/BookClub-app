@@ -16,9 +16,29 @@
   --color-tussock-950: #351e13;
 }
 
+@layer utilities {
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce {
+    animation: bounce-slow 5s ease-in-out infinite;
+  }
+}
+
 @layer components {
   body {
-    @apply bg-tussock-950;
+    @apply bg-linear-to-b/oklab from-tussock-950 to-tussock-900;
   }
 
   section {
@@ -29,9 +49,23 @@
   @media (min-width: 1024px) {
     section {
       width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
     }
   }
 }
+
+.bg {
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image:
+    repeating-linear-gradient(45deg, #351e13 25%, transparent 25%, transparent 75%, #351e13 75%, #351e13),
+    repeating-linear-gradient(45deg, #351e13 25%, #ffffff 25%, #ffffff 75%, #351e13 75%, #351e13);
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+
+}
+
 
 @font-face {
   font-family: Bodoni;
